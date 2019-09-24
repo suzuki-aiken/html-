@@ -6,7 +6,7 @@
 
 import random
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -17,8 +17,11 @@ def omikuji():
 
     result = random.choice(mylist)
 
-    return f'{result}'
+    # if 文で場合分け
+    #  return f'{result}'
+
+    return render_template('omikuji.html', result=result)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)  # app.run(debug=True port=7777)でurl変更可能
