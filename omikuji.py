@@ -4,12 +4,14 @@
 大吉　吉　凶　のいずれかの結果を変える　ViewFunctionを実装する
 """
 
+import random
+
 from flask import Flask
 
 app = Flask(__name__)
 
 
-@app.route('/omikuji')
+@app.route('/omi')
 def omikuji():
     mylist = ['大吉', '吉', '凶']
 
